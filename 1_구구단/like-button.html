@@ -9,7 +9,7 @@
             src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
         <!--react-dom : 리액트 코드를 웹에 붙여주는 역할-->
         <!--실제 배포할때는 development -> production 로 변경하면 된다.-->
-        <script src="https://unpkg.com/babel-standalon@6/babel.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     </head>
     <body>
         <div id="root"></div>
@@ -32,7 +32,7 @@
         </script>
         <script type="text/babel">
             // 위에서 어떻게 만들겠다라고 한 것을 여기서 render 해준다.
-            ReactDom.render(<LikeButton />, document.querySelector('#root'));
+            ReactDOM.render(<LikeButton />, document.querySelector('#root'));
         </script>
     </body>
 </html>

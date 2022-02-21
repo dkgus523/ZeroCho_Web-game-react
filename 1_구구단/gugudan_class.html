@@ -9,7 +9,7 @@
             src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <!--react-dom : 리액트 코드를 웹에 붙여주는 역할-->
     <!--실제 배포할때는 development -> production 로 변경하면 된다.-->
-    <script src="https://unpkg.com/babel-standalon@6/babel.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
 <div id="root"></div>
@@ -19,9 +19,9 @@
         const [first, setFirst] = React.useState(Math.ceil(Math.random() * 9));
         const [second, setSecond] = React.useState(Math.ceil(Math.random() * 9));
         const [value, setValue] = React.useState('');
-        const [value, setResult] = React.useState('');
+        const [result, setResult] = React.useState('');
         // ref
-        const inputRef = React.usuRef(null);
+        const inputRef = React.useRef(null);
 
         const onChangeInput = (e) => {
             setValue(e.target.value); // setValue로 value state 변경
@@ -29,7 +29,7 @@
 
         const onSubmitForm = (e) => {
             e.preventDefault();
-            if(parseInt(this.state.value) === this.state.first * this.state.second) {
+            if(parseInt(value) === first * second) {
                 setResult('정답 ' + value);
                 setFirst(Math.ceil(Math.random() * 9));
                 setSecond(Math.ceil(Math.random() * 9));
@@ -55,7 +55,7 @@
 </script>
 <script type="text/babel">
     // 위에서 어떻게 만들겠다라고 한 것을 여기서 render 해준다.
-    ReactDom.render(<GuGuDan/>, document.querySelector('#root'));
+    ReactDOM.render(<GuGuDan/>, document.querySelector('#root'));
 </script>
 </body>
 </html>
